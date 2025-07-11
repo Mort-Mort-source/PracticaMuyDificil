@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Clima</title>
+</head>
+<body>
+  <h1>Enviar datos climáticos</h1>
+  <form id="climate-form">
+    <label for="temp">Temperatura (°C):</label>
+    <input type="number" id="temp" name="temperature" required min="-50" max="60"><br><br>
+
+    <label for="humidity">Humedad (%):</label>
+    <input type="number" id="humidity" name="humidity" required min="0" max="100"><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <pre id="response"></pre>
+
+  <script>
+    document.getElementById('climate-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const data = {
+        temperature: parseFloat(document.getElementById('temp').value),
+        humidity: parseFloat(document.getElementById('humidity').value)
+      };
+
+      const res = await fetch('/frontend/send-data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const text = await res.text();
+      document.getElementById('response').textContent = text;
+    });
+  </script>
+</body>
+</html>

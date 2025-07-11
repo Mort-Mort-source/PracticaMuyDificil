@@ -8,3 +8,5 @@ spring:
 endpoints:
   collector: http://collector-service:8081/collector/receive
   alert: http://alert-service:8083/alert/check
+
+

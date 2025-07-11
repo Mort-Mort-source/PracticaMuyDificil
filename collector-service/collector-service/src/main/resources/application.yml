@@ -5,7 +5,6 @@ spring:
   application:
     name: collector-service
 
-# URL hacia storage-service (en Docker Compose la red por defecto)
 services:
   storage:
     url: http://storage-service:8082/storage/save
