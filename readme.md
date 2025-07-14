@@ -15,7 +15,6 @@ Todo está desarrollado en Java con Spring Boot 3.5.3 y empaquetado con Docker. 
 | **storage-service**  | 8082   | Guarda los datos en una base de datos PostgreSQL.         |
 | **alert-service**    | 8083   | Detecta si hay condiciones peligrosas (alertas).          |
 | **frontend-service** | 8084   | Punto de entrada para el usuario (API externa).           |
-| **db (PostgreSQL)**  | 5432   | Base de datos para el `storage-service`.                  |
 
 ---
 

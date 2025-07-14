@@ -1,5 +1,3 @@
-
-
 services:
   sensor-service:
     build: ./sensor-service/sensor-service
