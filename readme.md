@@ -69,14 +69,11 @@ Desde la raíz del proyecto (donde está docker-compose.yml), ejecuta:
 docker compose up --build
 ```
 
-## Paso 3
 
-Enviar datos climáticos desde el usuario
-Puedes usar curl desde tu terminal o Postman (si prefieres GUI). Este comando envía datos simulados:
 
+## Paso 3 Consumir el servicio
+Ingresar en la url
 ```bash
-curl -X POST http://localhost:8084/frontend/send-data \
-  -H "Content-Type: application/json" \
-  -d '{"temperature": 45, "humidity": 93}'
+http://localhost:8084
 ```
 
